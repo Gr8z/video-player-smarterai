@@ -5,8 +5,13 @@
   max-width: 854px;
   margin: 0 auto;
   background-color: #000;
-  padding: 10px;
+  padding: 6px;
   border-radius: 8px;
+
+  & video {
+    width: 100%;
+    border-radius: 8px;
+  }
 }
 
 .controls {

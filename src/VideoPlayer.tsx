@@ -50,13 +50,7 @@ const VideoPlayer: React.FC = () => {
 
   return (
     <div className='video-player'>
-      <video
-        ref={videoRef}
-        width='854'
-        height='480'
-        onEnded={handleVideoEnded}
-        controls={false}
-      />
+      <video ref={videoRef} onEnded={handleVideoEnded} controls={false} />
       <div className='controls'>
         <button
           onClick={() =>
