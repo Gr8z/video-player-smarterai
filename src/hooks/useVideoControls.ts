@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { recordings } from '../data/recordings'
 
 /***
- * Custom hook to control video playback
+ * Custom hook to control video playback and handle video ended event
  * @param currentVideoIndex - Current video index
  * @param isPlaying - Is video playing
  * @param videoRef - Video reference

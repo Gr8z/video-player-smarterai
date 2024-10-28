@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { recordings } from '../data/recordings'
 
 /***
- * Custom hook to calculate playback time
+ * Custom hook to calculate playback time and total duration
  * @param currentVideoIndex - Current video index
  * @param isPlaying - Is video playing
  * @param videoRef - Video reference

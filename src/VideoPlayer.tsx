@@ -7,6 +7,16 @@ import { handleSeek } from './utils/handleSeek'
 
 import './VideoPlayer.scss'
 
+/**
+ * VideoPlayer Component
+ *
+ * This component is a custom video player. It includes the following features:
+ *
+ * - Video playback with play/pause functionality.
+ * - Seeking functionality with a range input.
+ * - Display of current playback time and total duration.
+ * - Prefetching of the next video to improve loading times.
+ */
 const VideoPlayer: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
