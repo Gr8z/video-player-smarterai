@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/video-player-smarterai/static/css/main.fe9d1735.css",
-    "main.js": "/video-player-smarterai/static/js/main.d599f3ef.js",
+    "main.js": "/video-player-smarterai/static/js/main.7edaa943.js",
     "index.html": "/video-player-smarterai/index.html",
     "main.fe9d1735.css.map": "/video-player-smarterai/static/css/main.fe9d1735.css.map",
-    "main.d599f3ef.js.map": "/video-player-smarterai/static/js/main.d599f3ef.js.map"
+    "main.7edaa943.js.map": "/video-player-smarterai/static/js/main.7edaa943.js.map"
   },
   "entrypoints": [
     "static/css/main.fe9d1735.css",
-    "static/js/main.d599f3ef.js"
+    "static/js/main.7edaa943.js"
   ]
 }
