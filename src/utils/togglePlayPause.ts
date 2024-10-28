@@ -10,6 +10,15 @@ interface TogglePlayPauseParams {
   setPlaybackTime: React.Dispatch<React.SetStateAction<number>>
 }
 
+/***
+ * Toggle play/pause of the video
+ * @param isPlaying - Is video playing
+ * @param videoRef - Video reference
+ * @param setIsPlaying - Is playing setter
+ * @param currentVideoIndex - Current video index
+ * @param setCurrentVideoIndex - Current video index setter
+ * @param setPlaybackTime - Playback time setter
+ */
 export const togglePlayPause = ({
   isPlaying,
   videoRef,
@@ -30,6 +39,8 @@ export const togglePlayPause = ({
       setCurrentVideoIndex(0)
       setPlaybackTime(0)
     }
+
+    // Play the video
     setIsPlaying(true)
   }
 }

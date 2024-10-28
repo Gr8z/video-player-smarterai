@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { usePlaybackTime } from './hooks/usePlaybackTime'
 import { useVideoControls } from './hooks/useVideoControls'
 import { formatTime } from './utils/formatTime'
@@ -27,6 +27,18 @@ const VideoPlayer: React.FC = () => {
     setCurrentVideoIndex,
     setIsPlaying
   )
+
+  // prefetch next video
+  useEffect(() => {
+    // Add 2 to the current video index
+    const nextVideoIndex = currentVideoIndex + 2
+
+    // If the next video index is less than or equal to 3, prefetch the video
+    if (nextVideoIndex <= 3) {
+      const nextVideo = new Audio()
+      nextVideo.src = require(`./recordings/video${nextVideoIndex}.mp4`)
+    }
+  }, [currentVideoIndex])
 
   // Handle seeking start
   const handleSeekStart = () => {

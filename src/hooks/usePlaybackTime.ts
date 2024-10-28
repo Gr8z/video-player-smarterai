@@ -1,6 +1,13 @@
 import { useState, useEffect, useRef } from 'react'
 import { recordings } from '../data/recordings'
 
+/***
+ * Custom hook to calculate playback time
+ * @param currentVideoIndex - Current video index
+ * @param isPlaying - Is video playing
+ * @param videoRef - Video reference
+ * @returns playbackTime, setPlaybackTime, totalDuration
+ */
 export const usePlaybackTime = (
   currentVideoIndex: number,
   isPlaying: boolean,
@@ -21,18 +28,26 @@ export const usePlaybackTime = (
   useEffect(() => {
     let animationFrameId: number
 
+    // Update playback time based on the current video index, isPlaying state, and video reference
     const updatePlaybackTime = () => {
       let accumulatedTime = 0
+
+      // Calculate accumulated time for all the videos before the current video
       for (let i = 0; i < currentVideoIndex; i++) {
         accumulatedTime +=
           (recordings[i].endTimestamp - recordings[i].startTimestamp) / 1000
       }
+
+      // Add the current video's playback time
       if (videoRef.current) {
         setPlaybackTime(accumulatedTime + videoRef.current.currentTime)
       }
+
+      // Request next frame
       animationFrameId = requestAnimationFrame(updatePlaybackTime)
     }
 
+    // If video is playing, request animation frame
     if (isPlaying) {
       animationFrameId = requestAnimationFrame(updatePlaybackTime)
     }

@@ -12,6 +12,8 @@ export const useVideoControls = (
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.src = recordings[currentVideoIndex].url
+
+      // Play the video if isPlaying is true
       if (isPlaying) {
         videoRef.current.play().catch((err) => {
           console.error('Error attempting to play video:', err)
@@ -24,6 +26,7 @@ export const useVideoControls = (
   // Play or pause the video when isPlaying changes
   useEffect(() => {
     if (videoRef.current) {
+      // Play or pause the video based on isPlaying state
       if (isPlaying) {
         videoRef.current.play().catch((err) => {
           console.error('Error attempting to play video:', err)
@@ -39,6 +42,7 @@ export const useVideoControls = (
   const handleVideoEnded = () => {
     if (currentVideoIndex < recordings.length - 1) {
       setCurrentVideoIndex((prevIndex) => prevIndex + 1)
+
       // Ensure isPlaying remains true
       setIsPlaying(true)
     } else {
