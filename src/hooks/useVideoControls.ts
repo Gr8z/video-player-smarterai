@@ -19,6 +19,7 @@ export const useVideoControls = (
         })
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentVideoIndex])
 
   // Play or pause the video when isPlaying changes
@@ -32,6 +33,7 @@ export const useVideoControls = (
         videoRef.current.pause()
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPlaying])
 
   // Handle video ended event to play the next video
