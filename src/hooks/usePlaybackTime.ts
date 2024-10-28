@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { Recording } from '../types/Recording.type'
+import { Recording } from '../data/Recording.type'
 
 export const usePlaybackTime = (
   recordings: Recording[],

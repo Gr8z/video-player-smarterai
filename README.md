@@ -4,6 +4,8 @@ This project is a custom video player built with React and TypeScript. It sequen
 
 ## **Live Demo**
 
+![status](https://github.com/Gr8z/video-player-smarterai/actions/workflows/gh-pages.yml/badge.svg)
+
 You can view the live application on GitHub Pages:
 
 [Video Player Demo](https://Gr8z.github.io/video-player-smarterai/)

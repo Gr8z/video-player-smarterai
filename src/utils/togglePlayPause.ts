@@ -1,5 +1,5 @@
 import { RefObject } from 'react'
-import { Recording } from '../types/Recording.type'
+import { Recording } from '../data/Recording.type'
 
 interface TogglePlayPauseParams {
   isPlaying: boolean

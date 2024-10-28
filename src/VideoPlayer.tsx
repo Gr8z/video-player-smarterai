@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import recordings from './data/recordings.json'
+import { recordings } from './data/recordings'
 import { usePlaybackTime } from './hooks/usePlaybackTime'
 import { useVideoControls } from './hooks/useVideoControls'
 import { formatTime } from './utils/formatTime'
@@ -50,7 +50,12 @@ const VideoPlayer: React.FC = () => {
 
   return (
     <div className='video-player'>
-      <video ref={videoRef} onEnded={handleVideoEnded} controls={false} />
+      <video
+        ref={videoRef}
+        onEnded={handleVideoEnded}
+        controls={false}
+        height='480'
+      />
       <div className='controls'>
         <button
           onClick={() =>
