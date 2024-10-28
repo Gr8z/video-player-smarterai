@@ -15,9 +15,7 @@ export const useVideoControls = (
 
       // Play the video if isPlaying is true
       if (isPlaying) {
-        videoRef.current.play().catch((err) => {
-          console.error('Error attempting to play video:', err)
-        })
+        videoRef.current.play()
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -28,9 +26,7 @@ export const useVideoControls = (
     if (videoRef.current) {
       // Play or pause the video based on isPlaying state
       if (isPlaying) {
-        videoRef.current.play().catch((err) => {
-          console.error('Error attempting to play video:', err)
-        })
+        videoRef.current.play()
       } else {
         videoRef.current.pause()
       }

@@ -17,7 +17,7 @@ interface HandleSeekParams {
  * @param videoRef - Video reference
  * @param isPlaying - Is video playing
  */
-export const handleSeek = ({
+export const handleSeek = async ({
   event,
   setPlaybackTime,
   setCurrentVideoIndex,
@@ -45,9 +45,7 @@ export const handleSeek = ({
 
         // Play or pause the video
         if (isPlaying) {
-          videoRef.current.play().catch((err) => {
-            console.error('Error attempting to play video:', err)
-          })
+          await videoRef.current.play()
         } else {
           videoRef.current.pause()
         }
