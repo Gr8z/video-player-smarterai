@@ -1,12 +1,11 @@
 import { RefObject } from 'react'
-import { Recording } from '../data/Recording.type'
+import { recordings } from '../data/recordings'
 
 interface TogglePlayPauseParams {
   isPlaying: boolean
   videoRef: RefObject<HTMLVideoElement>
   setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>
   currentVideoIndex: number
-  recordings: Recording[]
   setCurrentVideoIndex: React.Dispatch<React.SetStateAction<number>>
   setPlaybackTime: React.Dispatch<React.SetStateAction<number>>
 }
@@ -16,7 +15,6 @@ export const togglePlayPause = ({
   videoRef,
   setIsPlaying,
   currentVideoIndex,
-  recordings,
   setCurrentVideoIndex,
   setPlaybackTime,
 }: TogglePlayPauseParams) => {

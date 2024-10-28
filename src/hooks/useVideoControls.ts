@@ -1,8 +1,7 @@
 import { useEffect } from 'react'
-import { Recording } from '../data/Recording.type'
+import { recordings } from '../data/recordings'
 
 export const useVideoControls = (
-  recordings: Recording[],
   currentVideoIndex: number,
   isPlaying: boolean,
   videoRef: React.RefObject<HTMLVideoElement>,

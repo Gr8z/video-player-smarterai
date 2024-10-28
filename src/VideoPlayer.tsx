@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-import { recordings } from './data/recordings'
 import { usePlaybackTime } from './hooks/usePlaybackTime'
 import { useVideoControls } from './hooks/useVideoControls'
 import { formatTime } from './utils/formatTime'
@@ -16,14 +15,12 @@ const VideoPlayer: React.FC = () => {
   const [isSeeking, setIsSeeking] = useState(false)
 
   const { playbackTime, setPlaybackTime, totalDuration } = usePlaybackTime(
-    recordings,
     currentVideoIndex,
-    isPlaying && !isSeeking, // Don't update playbackTime while seeking
+    isPlaying && !isSeeking,
     videoRef
   )
 
   const { handleVideoEnded } = useVideoControls(
-    recordings,
     currentVideoIndex,
     isPlaying,
     videoRef,
@@ -35,6 +32,7 @@ const VideoPlayer: React.FC = () => {
   const handleSeekStart = () => {
     setIsSeeking(true)
     setWasPlayingBeforeSeek(isPlaying)
+
     if (isPlaying) {
       setIsPlaying(false)
     }
@@ -43,6 +41,7 @@ const VideoPlayer: React.FC = () => {
   // Handle seeking end
   const handleSeekEnd = () => {
     setIsSeeking(false)
+
     if (wasPlayingBeforeSeek) {
       setIsPlaying(true)
     }
@@ -64,7 +63,6 @@ const VideoPlayer: React.FC = () => {
               videoRef,
               setIsPlaying,
               currentVideoIndex,
-              recordings,
               setCurrentVideoIndex,
               setPlaybackTime,
             })
@@ -81,13 +79,12 @@ const VideoPlayer: React.FC = () => {
             handleSeek({
               event,
               setPlaybackTime,
-              recordings,
               setCurrentVideoIndex,
               videoRef,
               isPlaying,
             })
           }
-          step='0.1'
+          step='0.01'
           onMouseDown={handleSeekStart}
           onMouseUp={handleSeekEnd}
           onTouchStart={handleSeekStart}

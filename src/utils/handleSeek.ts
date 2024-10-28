@@ -1,19 +1,17 @@
 import { RefObject } from 'react'
-import { Recording } from '../data/Recording.type'
+import { recordings } from '../data/recordings'
 
 interface HandleSeekParams {
   event: React.ChangeEvent<HTMLInputElement>
   setPlaybackTime: React.Dispatch<React.SetStateAction<number>>
-  recordings: Recording[]
   setCurrentVideoIndex: React.Dispatch<React.SetStateAction<number>>
   videoRef: RefObject<HTMLVideoElement>
-  isPlaying: boolean // Use wasPlayingBeforeSeek
+  isPlaying: boolean
 }
 
 export const handleSeek = ({
   event,
   setPlaybackTime,
-  recordings,
   setCurrentVideoIndex,
   videoRef,
   isPlaying,

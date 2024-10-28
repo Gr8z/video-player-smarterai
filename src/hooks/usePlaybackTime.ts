@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
-import { Recording } from '../data/Recording.type'
+import { recordings } from '../data/recordings'
 
 export const usePlaybackTime = (
-  recordings: Recording[],
   currentVideoIndex: number,
   isPlaying: boolean,
   videoRef: React.RefObject<HTMLVideoElement>
@@ -16,7 +15,7 @@ export const usePlaybackTime = (
       return acc + (rec.endTimestamp - rec.startTimestamp) / 1000
     }, 0)
     totalDurationRef.current = duration
-  }, [recordings])
+  }, [])
 
   // Update playback time smoothly
   useEffect(() => {
@@ -41,7 +40,7 @@ export const usePlaybackTime = (
     return () => {
       cancelAnimationFrame(animationFrameId)
     }
-  }, [isPlaying, currentVideoIndex, recordings, videoRef])
+  }, [isPlaying, currentVideoIndex, videoRef])
 
   return {
     playbackTime,
