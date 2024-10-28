@@ -26,13 +26,13 @@ Follow these instructions to set up and run the project locally.
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/your-github-username/your-repository-name.git
+   git clone https://github.com/video-player-smarterai/video-player-smarterai.git
    ```
 
 2. **Navigate to the Project Directory**
 
    ```bash
-   cd your-repository-name
+   cd video-player-smarterai
    ```
 
 3. **Install Dependencies**
@@ -67,26 +67,28 @@ The application is configured to deploy to GitHub Pages using GitHub Actions. An
 
 ```
 src/
-├── components/
-│   ├── VideoPlayer.tsx
-│   └── ...
-├── hooks/
-│   ├── usePlaybackTime.ts
-│   └── useVideoControls.ts
-├── utils/
-│   └── formatTime.ts
-├── types/
-│   └── index.ts
-├── recordings.json
-├── App.tsx
-└── index.tsx
+┣ data/
+┃ ┣ recordings.ts
+┃ ┗ ...
+┣ hooks/
+┃ ┣ usePlaybackTime.ts
+┃ ┗ useVideoControls.ts
+┣ recordings/
+┃ ┣ ...
+┣ utils/
+┃ ┣ formatTime.ts
+┃ ┣ handleSeek.ts
+┃ ┗ togglePlayPause.ts
+┣ VideoPlayer.scss
+┗ VideoPlayer.tsx
 ```
 
-- `components`: Contains React components used in the application.
+- `data`: Contains JSON data for the videos with timestamps.
 - `hooks`: Custom React hooks for managing playback time and video controls.
-- `utils`: Utility functions such as time formatting.
-- `types`: TypeScript interfaces and types.
-- `recordings.json`: JSON file containing video recording data.
+- `recordings`: Directory for videos of recordings.
+- `utils`: Utility functions such as time formatting, handing seeking, etc.
+- `VideoPlayer.tsx`: Main video player component.
+- `VideoPlayer.scss`: Styles for the video player.
 
 ## License and Disclaimer
 
