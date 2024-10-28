@@ -80,7 +80,7 @@ const VideoPlayer: React.FC = () => {
             })
           }
         >
-          {isPlaying ? '❚❚' : '►'}
+          {isPlaying ? '⏸️' : '▶️'}
         </button>
         <input
           type='range'
