@@ -1,6 +1,14 @@
 import { useEffect } from 'react'
 import { recordings } from '../data/recordings'
 
+/***
+ * Custom hook to control video playback
+ * @param currentVideoIndex - Current video index
+ * @param isPlaying - Is video playing
+ * @param videoRef - Video reference
+ * @param setCurrentVideoIndex - Set current video index
+ * @param setIsPlaying - Set isPlaying state
+ */
 export const useVideoControls = (
   currentVideoIndex: number,
   isPlaying: boolean,
