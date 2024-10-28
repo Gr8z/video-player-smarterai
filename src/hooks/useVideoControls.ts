@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Recording } from './types'
+import { Recording } from '../types/Recording.type'
 
 export const useVideoControls = (
   recordings: Recording[],

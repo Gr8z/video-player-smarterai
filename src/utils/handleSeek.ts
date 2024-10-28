@@ -1,5 +1,5 @@
 import { RefObject } from 'react'
-import { Recording } from './types'
+import { Recording } from '../types/Recording.type'
 
 interface HandleSeekParams {
   event: React.ChangeEvent<HTMLInputElement>

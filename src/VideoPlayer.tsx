@@ -1,12 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react'
-import recordings from './recordings.json'
-import { usePlaybackTime } from './usePlaybackTime'
-import { useVideoControls } from './useVideoControls'
-import { formatTime } from './formatTime'
-import { togglePlayPause } from './togglePlayPause'
-import { handleSeek } from './handleSeek'
+import React, { useState, useRef } from 'react'
+import recordings from './data/recordings.json'
+import { usePlaybackTime } from './hooks/usePlaybackTime'
+import { useVideoControls } from './hooks/useVideoControls'
+import { formatTime } from './utils/formatTime'
+import { togglePlayPause } from './utils/togglePlayPause'
+import { handleSeek } from './utils/handleSeek'
 
-import './VideoPlayer.css'
+import './VideoPlayer.scss'
 
 const VideoPlayer: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -48,16 +48,6 @@ const VideoPlayer: React.FC = () => {
     }
   }
 
-  // Preload all videos
-  useEffect(() => {
-    recordings.map((recording) => {
-      const videoElement = document.createElement('video')
-      videoElement.src = recording.url
-      videoElement.preload = 'auto'
-      return videoElement
-    })
-  }, [])
-
   return (
     <div className='video-player'>
       <video
@@ -66,7 +56,6 @@ const VideoPlayer: React.FC = () => {
         height='480'
         onEnded={handleVideoEnded}
         controls={false}
-        preload='auto'
       />
       <div className='controls'>
         <button
